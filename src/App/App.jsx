@@ -1,33 +1,28 @@
 import { useState } from "react";
-// import ClickCounter from "./ClickCounter/ClickCounter";
+import ClickCounter from "./ClickCounter/ClickCounter";
 
 const App = () => {
-  const [values, setValues] = useState({
-    x: 0,
-    y: 0,
+  const [clicks, setClicks] = useState({
+    a: 0,
+    b: 0,
   });
 
-  const updateX = () => {
-    setValues({
-      ...values,
-      x: values.x + 1,
-    });
-  };
-  const updateY = () => {
-    setValues({
-      ...values,
-      y: values.y + 1,
+  const handelClick = (key) => {
+    setClicks({
+      ...clicks,
+      [key]: clicks[key] + 1,
     });
   };
 
   return (
     <div>
-      <p>
-        x: {values.x}, y: {values.y}
-      </p>
-
-      <button onClick={updateX}>Update x</button>
-      <button onClick={updateY}>Update y</button>
+      <ClickCounter value={clicks.a} onTrack={() => handelClick("a")}>
+        Click a
+      </ClickCounter>
+      <ClickCounter value={clicks.b} onTrack={() => handelClick("b")}>
+        Click b
+      </ClickCounter>
+      <p>Total clicks: {clicks.a + clicks.b}</p>
     </div>
   );
 };

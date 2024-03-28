@@ -1,5 +1,9 @@
-const ClickCounter = ({ value, onUpdate }) => {
-  return <button onClick={onUpdate}>Current: {value}</button>;
+const ClickCounter = ({ value, onTrack, children }) => {
+  return (
+    <button onClick={onTrack}>
+      {children}: {value}
+    </button>
+  );
 };
 
 export default ClickCounter;
