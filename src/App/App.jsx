@@ -1,5 +1,8 @@
 import { useState } from "react";
 import articles from "./articles.json";
+import Controls from "./Controls/Controls";
+import Progress from "./Progress/Progress";
+import ArticleView from "./ArticleView/ArticleView";
 
 const App = () => {
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -13,27 +16,21 @@ const App = () => {
   };
 
   const visibleArticle = articles[selectedIdx];
-
-  const isPrevDisabled = selectedIdx === 0;
-  const isNextDisabled = selectedIdx === articles.length - 1;
+  const isFirst = selectedIdx === 0;
+  const isLast = selectedIdx === articles.length - 1;
+  const current = selectedIdx + 1;
+  const total = articles.length;
 
   return (
     <div>
-      <div>
-        <button disabled={isPrevDisabled} onClick={handlePref}>
-          Prev
-        </button>
-        <button disabled={isNextDisabled} onClick={handleNext}>
-          Next
-        </button>
-      </div>
-      <p>
-        {selectedIdx + 1}/{articles.length}
-      </p>
-      <article>
-        <h1>{visibleArticle.topic}</h1>
-        <p>{visibleArticle.text}</p>
-      </article>
+      <Controls
+        first={isFirst}
+        last={isLast}
+        onPrev={handlePref}
+        onNext={handleNext}
+      />
+      <Progress current={current} total={total} />
+      <ArticleView article={visibleArticle} />
     </div>
   );
 };

@@ -1,10 +1,10 @@
-export default function Controls({ onPrev, onNext }) {
+export default function Controls({ first, last, onPrev, onNext }) {
   return (
     <div>
-      <button disabled={isPrevDisabled} onClick={onPrev}>
+      <button disabled={first} onClick={onPrev}>
         Prev
       </button>
-      <button disabled={isNextDisabled} onClick={onNext}>
+      <button disabled={last} onClick={onNext}>
         Next
       </button>
     </div>
