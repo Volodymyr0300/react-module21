@@ -1,28 +1,39 @@
 import { useState } from "react";
-import ClickCounter from "./ClickCounter/ClickCounter";
+import articles from "./articles.json";
 
 const App = () => {
-  const [clicks, setClicks] = useState({
-    a: 0,
-    b: 0,
-  });
+  const [selectedIdx, setSelectedIdx] = useState(0);
 
-  const handelClick = (key) => {
-    setClicks({
-      ...clicks,
-      [key]: clicks[key] + 1,
-    });
+  const handlePref = () => {
+    setSelectedIdx(selectedIdx - 1);
   };
+
+  const handleNext = () => {
+    setSelectedIdx(selectedIdx + 1);
+  };
+
+  const visibleArticle = articles[selectedIdx];
+
+  const isPrevDisabled = selectedIdx === 0;
+  const isNextDisabled = selectedIdx === articles.length - 1;
 
   return (
     <div>
-      <ClickCounter value={clicks.a} onTrack={() => handelClick("a")}>
-        Click a
-      </ClickCounter>
-      <ClickCounter value={clicks.b} onTrack={() => handelClick("b")}>
-        Click b
-      </ClickCounter>
-      <p>Total clicks: {clicks.a + clicks.b}</p>
+      <div>
+        <button disabled={isPrevDisabled} onClick={handlePref}>
+          Prev
+        </button>
+        <button disabled={isNextDisabled} onClick={handleNext}>
+          Next
+        </button>
+      </div>
+      <p>
+        {selectedIdx + 1}/{articles.length}
+      </p>
+      <article>
+        <h1>{visibleArticle.topic}</h1>
+        <p>{visibleArticle.text}</p>
+      </article>
     </div>
   );
 };

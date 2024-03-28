@@ -1,0 +1,52 @@
+[
+  {
+    "item": 1,
+    "topic": "Technology",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat."
+  },
+  {
+    "item": 2,
+    "topic": "Science",
+    "text": "Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat."
+  },
+  {
+    "item": 3,
+    "topic": "Health",
+    "text": "Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat."
+  },
+  {
+    "item": 4,
+    "topic": "Business",
+    "text": "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+  },
+  {
+    "item": 5,
+    "topic": "Travel",
+    "text": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
+  },
+  {
+    "item": 6,
+    "topic": "Food",
+    "text": "Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat."
+  },
+  {
+    "item": 7,
+    "topic": "Sports",
+    "text": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a."
+  },
+  {
+    "item": 8,
+    "topic": "Entertainment",
+    "text": "Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem."
+  },
+  {
+    "item": 9,
+    "topic": "Fashion",
+    "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque."
+  },
+  {
+    "item": 10,
+    "topic": "Education",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat."
+  }
+]
